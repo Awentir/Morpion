@@ -6,11 +6,15 @@ while run:
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             run = False
-        if event.type==pygame.MOUSEBUTTONDOWN:
-            if pygame.mouse.get_pressed()==(1,0,0):
-                print("clic bouton gauche")
-            if pygame.mouse.get_pressed()==(0,0,1):
-                print("clic bouton droit")
+        if event.type==pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                print("Vous avez appuyé sur la touche espace")
+            elif event.key == pygame.K_a:
+                print("Vous avez appuyé sur la touche A")
+            elif event.key == pygame.K_RETURN:
+                print("Vous avez appuyé sur la touche Entrée")
+            else:
+                print("Vous avez appuyé sur une touche mais zebi je sais pas laquelle")
     surf.fill((0,0,0))
     pygame.display.flip()
 pygame.quit()

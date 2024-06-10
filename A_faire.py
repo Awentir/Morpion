@@ -2,18 +2,15 @@ import pygame
 
 surf=pygame.display.set_mode((800,600))
 run = True
-posX = 50
-vx = 1
-clock = pygame.time.Clock()
 while run:
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             run = False
-    clock.tick(0)
+        if event.type==pygame.MOUSEBUTTONDOWN:
+            if pygame.mouse.get_pressed()==(1,0,0):
+                print("clic bouton gauche")
+            if pygame.mouse.get_pressed()==(0,0,1):
+                print("clic bouton droit")
     surf.fill((0,0,0))
-    pygame.draw.circle(surf,(255,0,0),(posX,300),30,2)
-    if posX>770 or posX<30:
-        vx=-vx
-    posX=posX+vx
     pygame.display.flip()
 pygame.quit()
